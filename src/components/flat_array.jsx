@@ -2,21 +2,44 @@ import React, { Component } from 'react';
 import Flat from './flat';
 
 
-
-class FlatArray extends Component {
-	constructor(props) {
-		super(props);
+const FlatArray = (props) => {
+	const renderList = () => {
+		return props.flats.map((flat, index) => {
+			return (
+				<Flat
+					flat={flat}
+					key={flat.index}
+					selected={flat.name === props.selectedFlat.name}
+					index={index}
+					selecteFlat={props.selecteFlat}
+				/>
+			);
+		});
 	};
-	render() {
-		return (
+
+	return (
 		<div className="flat-list">
-			<div className="card">
-
-			</div>
-
+			{renderList()}
 		</div>
 		);
-	}
-}
+};
+export default FlatArray;
 
-export default FlatArray
+
+
+// class FlatArray extends Component {
+// 	renderList= () => {
+// 		return this.props.flats.map (flat => {
+// 			return <Flat id={flat.index} key={flat.index} />
+// 		})
+// 	}
+
+// 		render() {
+// 			return (
+// 			<div className="flat-list">
+// 			{this.renderList()}
+// 			</div>
+// 			);
+// 		}
+// }
+

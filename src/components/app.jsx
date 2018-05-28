@@ -10,19 +10,29 @@ import GoogleMapReact from 'google-map-react';
 
 
 class App extends Component {
-	// constructor(props) {
-	// 	super(props);
+	constructor(props) {
+		super(props);
+		this.state={
+			flats: [],
+		};
+	}
 
-	// }
+	selectFlat = (index) => {
+		this.setState({
+			selectedFlatIndex: [index] });
+	}
+
 
 	render () {
 		return(
-			<div className="container">
-				<FlatArray />
+		<div className="container">
+			<h3>This will say something to explain the app</h3>
+				<FlatArray
+					flats={this.state.flats}
+					selectedFlat={this.state.selectedFlat}
+					selectFlat={this.selecteFlat}
+				/>
 				<Map />
-
-
-
 			</div>
 			);
 
