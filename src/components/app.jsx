@@ -4,17 +4,12 @@ import FlatArray from './flat_array';
 import Map from './map';
 import Marker from './marker'
 import flats from '../../data/flats';
-
 import GoogleMapReact from 'google-map-react';
-
-
 
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state={
-			flats: [],
-		};
+		this.state={ selectedFlat: flats[0], flats};
 	}
 
 	selectFlat = (index) => {
@@ -22,22 +17,25 @@ class App extends Component {
 			selectedFlatIndex: [index] });
 	}
 
-
 	render () {
 		return(
-		<div className="container">
+			<div>
 			<h3>This will say something to explain the app</h3>
 				<FlatArray
 					flats={this.state.flats}
 					selectedFlat={this.state.selectedFlat}
-					selectFlat={this.selecteFlat}
+					selectFlat={this.selectFlat}
 				/>
-				<Map />
-			</div>
+				<div className="map-container">
+					<Map />
+				</div>
+</div>
 			);
-
 	}
 };
+export default App;
+
+
 // const flats = [
 //   {
 //     name: "Charm at the Steps of the Sacre Coeur/Montmartre",
@@ -48,4 +46,3 @@ class App extends Component {
 //     lng: 2.34689
 //   },
 //
-export default App;

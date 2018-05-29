@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Flat from './flat';
 
-
 const FlatArray = (props) => {
 	const renderList = () => {
 		return props.flats.map((flat, index) => {
@@ -11,21 +10,18 @@ const FlatArray = (props) => {
 					key={flat.index}
 					selected={flat.name === props.selectedFlat.name}
 					index={index}
-					selecteFlat={props.selecteFlat}
-				/>
-			);
+					selectedFlat={props.selectedFlat}
+					/>
+				);
 		});
 	};
 
-	return (
-		<div className="flat-list">
-			{renderList()}
-		</div>
-		);
+	return ( <div className="flat-list"> {renderList()} </div> );
 };
+
 export default FlatArray;
 
-
+// line 7 I am mapping over the flats.
 
 // class FlatArray extends Component {
 // 	renderList= () => {
