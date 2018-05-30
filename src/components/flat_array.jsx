@@ -7,7 +7,7 @@ const FlatArray = (props) => {
 			return (
 				<Flat
 					flat={flat}
-					key={flat.index}
+					key={index}
 					selected={flat.name === props.selectedFlat.name}
 					index={index}
 					selectedFlat={props.selectedFlat}

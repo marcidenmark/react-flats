@@ -12,6 +12,9 @@ body {
   width: 100%;
 }
 
+// Line 15:
+// Selects all <div> elements
+// where the parent is a .container element
 .container > div {
   margin-top: 20px;
   display: flex;

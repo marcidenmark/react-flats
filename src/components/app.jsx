@@ -13,13 +13,14 @@ class App extends Component {
 	}
 
 	selectFlat = (index) => {
-		this.setState({ selectedFlatIndex: [index] });
+		this.setState({
+			selectedFlatIndex: [index] });
 	}
 
 	render () {
 		return(
-			<div>
-			<h3>This will say something to explain the app</h3>
+
+			<div id="root">
 				<FlatArray
 					flats={this.state.flats}
 					selectedFlat={this.state.selectedFlat}
@@ -27,6 +28,7 @@ class App extends Component {
 				/>
 				<Map />
 			</div>
+
 			);
 	}
 };
